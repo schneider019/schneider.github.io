@@ -76,6 +76,84 @@
         }
         .typewriter p {
             overflow: hidden;
+            border-righ<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schneider Etienne | IT Professional</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Share Tech Mono', monospace;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: relative;
+        }
+        .matrix-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('https://i.imgur.com/2Kd0v4K.gif') repeat;
+            opacity: 0.2;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            width: 500vw;
+            height: 100vh;
+            transition: transform 0.5s ease-in-out;
+        }
+        .section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+        h1 {
+            font-size: 2em;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+            animation: glitch 1.5s infinite alternate;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 0 0 5px #00ff00; }
+            50% { text-shadow: -2px -2px 5px #00ff00, 2px 2px 5px #00ff00; }
+            100% { text-shadow: 2px -2px 5px #00ff00, -2px 2px 5px #00ff00; }
+        }
+        .btn {
+            background: black;
+            color: #00ff00;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 5px #00ff00;
+        }
+        .btn:hover {
+            background: #00ff00;
+            color: black;
+            transform: scale(1.1);
+            box-shadow: 0 0 10px #00ff00;
+        }
+        .typewriter p {
+            overflow: hidden;
             border-right: .15em solid #00ff00;
             white-space: nowrap;
             margin: 0 auto;
