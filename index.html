@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schneider | Cybersecurity & IT Professional</title>
+    <title>Etienne Schneider | Cybersecurity & IT Professional</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <style>
@@ -32,6 +32,7 @@
             justify-content: center;
             text-align: center;
             background-size: cover;
+            padding: 20px;
         }
         #home {
             background: linear-gradient(135deg, #1a1a2e, #16213e);
@@ -41,6 +42,9 @@
         }
         #projects {
             background: linear-gradient(135deg, #ff6f00, #ff9800);
+        }
+        #experience {
+            background: linear-gradient(135deg, #673ab7, #512da8);
         }
         #contact {
             background: linear-gradient(135deg, #4caf50, #388e3c);
@@ -72,6 +76,13 @@
             background: lightgray;
             transform: scale(1.05);
         }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid white;
+        }
         .nav-buttons {
             position: fixed;
             bottom: 20px;
@@ -100,20 +111,27 @@
 <body>
     <div class="wrapper" id="wrapper">
         <section class="section" id="home">
-            <h1>Schneider</h1>
-            <p>Aspiring Cybersecurity Professional | IT Administrator | Data Analyst</p>
-            <p>Bringing security and efficiency to digital solutions.</p>
+            <img src="profile.jpg" alt="Etienne Schneider" class="profile-img">
+            <h1>Etienne Schneider</h1>
+            <p>Cybersecurity | IT Administration | Data Science</p>
+            <p>Dedicated to securing and optimizing digital systems with innovative solutions.</p>
             <button class="btn" onclick="scrollToSection(1)">Explore My Skills</button>
         </section>
         <section class="section" id="skills">
             <h1>Skills</h1>
-            <p>Expert in Cybersecurity, IT Infrastructure, and Data Analytics</p>
+            <p>Expert in Cybersecurity, IT Infrastructure, Cloud Security, and Data Analytics.</p>
             <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
         </section>
         <section class="section" id="projects">
             <h1>Projects</h1>
-            <p>Cybersecurity Case Studies, Cloud Security Reports, and AI-based Security Models</p>
-            <button class="btn" onclick="scrollToSection(3)">Get In Touch</button>
+            <p>Developed cybersecurity case studies, cloud security reports, and AI-based security models.</p>
+            <button class="btn" onclick="scrollToSection(3)">View Experience</button>
+        </section>
+        <section class="section" id="experience">
+            <h1>Work Experience</h1>
+            <p>System Administrator Intern at Florida Highway Patrol.</p>
+            <p>Data Scientist - Developed AI-driven credit score classification models.</p>
+            <button class="btn" onclick="scrollToSection(4)">Get In Touch</button>
         </section>
         <section class="section" id="contact">
             <h1>Contact</h1>
@@ -126,6 +144,7 @@
         <div class="nav-btn" onclick="scrollToSection(1)"></div>
         <div class="nav-btn" onclick="scrollToSection(2)"></div>
         <div class="nav-btn" onclick="scrollToSection(3)"></div>
+        <div class="nav-btn" onclick="scrollToSection(4)"></div>
     </div>
     <script>
         function scrollToSection(index) {
