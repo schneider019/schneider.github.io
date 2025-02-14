@@ -112,6 +112,12 @@
         .nav-btn:hover, .nav-btn.active {
             background: #ff6f00;
         }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -120,11 +126,18 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .btn:hover {
+            animation: bounce 0.5s;
+        }
     </style>
 </head>
 <body>
     <div class="wrapper" id="wrapper">
-        <section class="section" id="home">
+        <section class="section parallax" id="home">
             <img src="profile.jpg" alt="Schneider Etienne" class="profile-img">
             <h1>Schneider Etienne</h1>
             <p>Cybersecurity | IT Administration | Data Science</p>
@@ -157,14 +170,5 @@
             <button class="btn" onclick="scrollToSection(0)">Back to Home</button>
         </section>
     </div>
-    <script>
-        function scrollToSection(index) {
-            const wrapper = document.getElementById("wrapper");
-            wrapper.style.transform = `translateX(-${index * 100}vw)`;
-            document.querySelectorAll('.nav-btn').forEach((btn, i) => {
-                btn.classList.toggle('active', i === index);
-            });
-        }
-    </script>
 </body>
 </html>
