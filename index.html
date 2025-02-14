@@ -6,6 +6,7 @@
     <title>Schneider's Game Boy Resume</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         body {
             background-color: #a0a0a0;
             display: flex;
@@ -36,6 +37,17 @@
             color: white;
             text-align: center;
             margin-bottom: 20px;
+            position: relative;
+        }
+        .blinking {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background: white;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
         }
         button {
             background: #444;
@@ -57,7 +69,7 @@
 <body>
     <div class="gameboy">
         <div class="screen">
-            <h1>Welcome to Schneider's Resume</h1>
+            <h1>Welcome to Schneider's Resume<span class="blinking"></span></h1>
             <img src="profile.jpg" alt="Schneider Etienne" class="profile-img">
             <p>Cybersecurity | Data Science | IT Admin</p>
             <p>Florida State University | B.S. IT | Expected 2025</p>
@@ -80,9 +92,10 @@
     </div>
     <script>
         function navigate(section) {
-            alert('Navigating to ' + section);
+            window.location.href = section + ".html";
         }
     </script>
 </body>
 </html>
+
 
