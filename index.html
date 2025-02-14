@@ -3,86 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schneider's Game Boy Resume</title>
+    <title>Schneider's PlayStation Menu</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         body {
-            background-color: #a0a0a0;
+            background-color: #0a0a0a;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             font-family: 'Press Start 2P', cursive;
             overflow: hidden;
+            color: white;
         }
-        .gameboy {
-            width: 320px;
-            height: 550px;
-            background-color: #d0d0d0;
+        .playstation-menu {
+            width: 600px;
+            height: 400px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             border-radius: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0px 0px 20px rgba(0, 0, 255, 0.5);
             position: relative;
             animation: fadeIn 2s ease-in-out;
         }
-        .screen {
-            width: 280px;
-            height: 200px;
-            background-color: #7cb342;
+        .menu-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-shadow: 0px 0px 10px rgba(0, 0, 255, 0.8);
+        }
+        .menu-options {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
+            gap: 15px;
+        }
+        .menu-option {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
             text-align: center;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
+            font-size: 18px;
+            width: 200px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.3);
+            opacity: 0;
+            animation: slideIn 1s forwards;
         }
-        .character {
-            width: 40px;
-            height: 40px;
-            background-color: red;
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            transition: transform 0.2s;
-        }
-        .buttons button {
-            transition: transform 0.1s;
-        }
-        .buttons button:active {
-            transform: scale(0.9);
+        .menu-option:nth-child(1) { animation-delay: 0.3s; }
+        .menu-option:nth-child(2) { animation-delay: 0.6s; }
+        .menu-option:nth-child(3) { animation-delay: 0.9s; }
+        .menu-option:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 0px 15px rgba(0, 0, 255, 0.6);
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
         }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 0, 255, 0.3), rgba(0, 0, 0, 0.8));
+            animation: pulse 3s infinite alternate;
+            z-index: -1;
+        }
+        @keyframes pulse {
+            from { opacity: 0.7; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
-    <div class="gameboy">
-        <div class="screen">
-            <h1>Welcome to Schneider's Resume</h1>
-            <div class="character"></div>
-            <p>Cybersecurity | Data Science | IT Admin</p>
-            <button onclick="navigate('skills')">📜 Skills</button>
-            <button onclick="navigate('projects')">🕹️ Projects</button>
-            <button onclick="navigate('contact')">📞 Contact</button>
-        </div>
-        <div class="buttons">
-            <button class="up" onclick="moveCharacter(0, -10)">▲</button>
-            <button class="left" onclick="moveCharacter(-10, 0)">◀</button>
-            <button class="right" onclick="moveCharacter(10, 0)">▶</button>
-            <button class="down" onclick="moveCharacter(0, 10)">▼</button>
+    <div class="background-animation"></div>
+    <div class="playstation-menu">
+        <h1 class="menu-title">Schneider's PlayStation Menu</h1>
+        <div class="menu-options">
+            <div class="menu-option" onclick="navigate('skills')">🔹 Skills</div>
+            <div class="menu-option" onclick="navigate('projects')">🎮 Projects</div>
+            <div class="menu-option" onclick="navigate('contact')">📧 Contact</div>
         </div>
     </div>
-    <audio id="move-sound" src="move.mp3"></audio>
     <audio id="select-sound" src="select.mp3"></audio>
     <script>
         function navigate(section) {
@@ -91,13 +104,6 @@
                 window.location.href = section + ".html";
             }, 500);
         }
-        function moveCharacter(x, y) {
-            const character = document.querySelector('.character');
-            const rect = character.getBoundingClientRect();
-            document.getElementById('move-sound').play();
-            character.style.transform = `translate(${rect.left + x}px, ${rect.top + y}px)`;
-        }
     </script>
 </body>
 </html>
-
