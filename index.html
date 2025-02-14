@@ -93,45 +93,11 @@
             border: 4px solid white;
             animation: fadeIn 1.5s ease-in-out;
         }
-        .nav-buttons {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 20px;
+        .skills-list {
+            text-align: left;
         }
-        .nav-btn {
-            width: 15px;
-            height: 15px;
-            background: white;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .nav-btn:hover, .nav-btn.active {
-            background: #ff6f00;
-        }
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .btn:hover {
-            animation: bounce 0.5s;
+        .star-rating {
+            color: gold;
         }
     </style>
 </head>
@@ -147,26 +113,38 @@
         </section>
         <section class="section" id="skills">
             <h1>Skills</h1>
-            <p>Proficient in Cybersecurity, IT Infrastructure, Cloud Security, and Data Analytics.</p>
-            <p>Expertise in network security, penetration testing, and database management.</p>
+            <div class="skills-list">
+                <p>Cybersecurity <span class="star-rating">★★★★★</span></p>
+                <p>IT Administration <span class="star-rating">★★★★☆</span></p>
+                <p>Data Science & Analysis <span class="star-rating">★★★★☆</span></p>
+                <p>Cloud Security <span class="star-rating">★★★☆☆</span></p>
+                <p>Network Security <span class="star-rating">★★★★★</span></p>
+                <p>Threat Analysis <span class="star-rating">★★★★☆</span></p>
+            </div>
             <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
         </section>
         <section class="section" id="projects">
             <h1>Projects</h1>
-            <p>Developed cybersecurity case studies, cloud security reports, and AI-based security models.</p>
-            <p>Engineered secure database systems and optimized IT workflows.</p>
+            <p>Developed AI-driven cybersecurity models to detect fraudulent activities.</p>
+            <p>Engineered cloud security policies for enterprise networks.</p>
+            <p>Created a risk assessment framework for IT infrastructure security.</p>
             <button class="btn" onclick="scrollToSection(3)">View Experience</button>
         </section>
         <section class="section" id="experience">
             <h1>Work Experience</h1>
-            <p>System Administrator Intern at Florida Highway Patrol - Managed IT infrastructure security.</p>
-            <p>Data Scientist - Developed AI-driven credit score classification models.</p>
-            <p>Home Depot - Gained customer service & operational IT support experience.</p>
+            <p><b>System Administrator Intern - Florida Highway Patrol</b></p>
+            <p>Managed IT infrastructure, security audits, and system optimization.</p>
+            <p><b>Data Scientist - Finance Industry</b></p>
+            <p>Developed AI-driven credit score classification models based on financial risk factors.</p>
+            <p><b>Home Depot - IT Support</b></p>
+            <p>Provided customer and technical support for operational IT systems.</p>
             <button class="btn" onclick="scrollToSection(4)">Get In Touch</button>
         </section>
         <section class="section" id="contact">
             <h1>Contact</h1>
             <p>Let's connect and discuss opportunities!</p>
+            <p>Email: your.email@example.com</p>
+            <p>LinkedIn: linkedin.com/in/yourprofile</p>
             <button class="btn" onclick="scrollToSection(0)">Back to Home</button>
         </section>
     </div>
