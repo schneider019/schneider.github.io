@@ -91,6 +91,22 @@
         .nav-btn:hover, .nav-btn.active {
             background: white;
         }
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .gallery-img {
+            width: 150px;
+            height: 150px;
+            border: 3px solid #00ff00;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-img:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -101,6 +117,11 @@
             <p>IT Professional | System Administrator | Data Analyst</p>
             <p>Passionate about building secure and scalable systems that drive innovation.</p>
             <button class="btn" onclick="scrollToSection(1)">Explore My Skills</button>
+            <div class="image-gallery">
+                <img src="https://i.imgur.com/W4Z6ZZp.jpg" alt="Coding" class="gallery-img">
+                <img src="https://i.imgur.com/r1dUZNc.jpg" alt="Networking" class="gallery-img">
+                <img src="https://i.imgur.com/N5dGZd9.jpg" alt="IT Security" class="gallery-img">
+            </div>
         </section>
         <section class="section" id="skills">
             <h1>Technical Skills</h1>
@@ -117,16 +138,6 @@
             <p><b>Sushi Alive Website Redesign</b> - Led the design and development of an interactive website for a health-conscious restaurant.</p>
             <p><a href="https://github.com/yourgithub" target="_blank">View More on GitHub</a></p>
             <button class="btn" onclick="scrollToSection(3)">View Experience</button>
-        </section>
-        <section class="section" id="experience">
-            <h1>Work Experience</h1>
-            <p><b>System Administrator Intern - Florida Highway Patrol</b></p>
-            <p>- Assisted in managing IT infrastructure and security audits.</p>
-            <p>- Configured and troubleshooted enterprise network systems.</p>
-            <p><b>Home Depot - Customer Service Associate</b></p>
-            <p>- Provided technical support for store operational systems.</p>
-            <p>- Trained new employees on digital inventory systems.</p>
-            <button class="btn" onclick="scrollToSection(4)">Get In Touch</button>
         </section>
         <section class="section" id="contact">
             <h1>Contact</h1>
