@@ -16,6 +16,17 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            position: relative;
+        }
+        .matrix-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('https://i.imgur.com/2Kd0v4K.gif') repeat;
+            opacity: 0.2;
         }
         .wrapper {
             display: flex;
@@ -35,20 +46,16 @@
             background-size: cover;
             background-position: center;
         }
-        #home {
-            background: url('https://i.imgur.com/U5Ow6eX.gif') no-repeat center center/cover;
-        }
-        #skills, #projects, #education, #contact {
-            background: black;
-        }
         h1 {
             font-size: 2em;
             text-transform: uppercase;
             text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+            animation: glitch 1.5s infinite alternate;
         }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 15px;
+        @keyframes glitch {
+            0% { text-shadow: 0 0 5px #00ff00; }
+            50% { text-shadow: -2px -2px 5px #00ff00, 2px 2px 5px #00ff00; }
+            100% { text-shadow: 2px -2px 5px #00ff00, -2px 2px 5px #00ff00; }
         }
         .btn {
             background: black;
@@ -59,25 +66,35 @@
             cursor: pointer;
             transition: 0.3s ease-in-out;
             border: 2px solid #00ff00;
+            box-shadow: 0 0 5px #00ff00;
         }
         .btn:hover {
             background: #00ff00;
             color: black;
             transform: scale(1.1);
+            box-shadow: 0 0 10px #00ff00;
         }
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 4px solid #00ff00;
+        .progress-bar {
+            width: 50%;
+            background: #333;
+            border-radius: 5px;
+            margin: 10px auto;
+            height: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background: #00ff00;
+            width: 0;
+            transition: width 2s ease-in-out;
         }
     </style>
 </head>
 <body>
+    <div class="matrix-background"></div>
     <div class="wrapper" id="wrapper">
         <section class="section" id="home">
-            <img src="profile.jpg" alt="Schneider Etienne" class="profile-img">
             <h1>Schneider Etienne</h1>
             <p>IT Professional | Web Developer | Data Analyst</p>
             <p>Welcome to my digital world of security and innovation.</p>
@@ -85,9 +102,12 @@
         </section>
         <section class="section" id="skills">
             <h1>Skills</h1>
-            <p><b>Programming:</b> C++, Python, HTML, CSS ⭐⭐⭐⭐⭐</p>
-            <p><b>Databases & Tools:</b> MySQL, Microsoft Office, Orange Data Mining ⭐⭐⭐⭐☆</p>
-            <p><b>Development & Design:</b> Wireframing, Prototyping, UNIX ⭐⭐⭐⭐☆</p>
+            <p>Programming: C++, Python, HTML, CSS</p>
+            <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+            <p>Databases & Tools: MySQL, Microsoft Office, Orange Data Mining</p>
+            <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
+            <p>Development & Design: Wireframing, Prototyping, UNIX</p>
+            <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
             <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
         </section>
         <section class="section" id="projects">
