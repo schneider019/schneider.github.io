@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schneider's Game Boy Resume</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         body {
@@ -14,6 +15,7 @@
             align-items: center;
             height: 100vh;
             font-family: 'Press Start 2P', cursive;
+            overflow: hidden;
         }
         .gameboy {
             width: 320px;
@@ -25,6 +27,8 @@
             align-items: center;
             padding: 20px;
             box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
         }
         .screen {
             width: 280px;
@@ -38,64 +42,60 @@
             text-align: center;
             margin-bottom: 20px;
             position: relative;
+            overflow: hidden;
         }
-        .blinking {
-            display: inline-block;
-            width: 10px;
-            height: 20px;
-            background: white;
-            animation: blink 1s infinite;
+        .character {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            transition: transform 0.2s;
         }
-        @keyframes blink {
-            50% { opacity: 0; }
+        .buttons button {
+            transition: transform 0.1s;
         }
-        button {
-            background: #444;
-            color: white;
-            font-size: 14px;
-            padding: 10px;
-            margin: 5px;
-            border: none;
-            cursor: pointer;
+        .buttons button:active {
+            transform: scale(0.9);
         }
-        .profile-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 10px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
     </style>
 </head>
 <body>
     <div class="gameboy">
         <div class="screen">
-            <h1>Welcome to Schneider's Resume<span class="blinking"></span></h1>
-            <img src="profile.jpg" alt="Schneider Etienne" class="profile-img">
+            <h1>Welcome to Schneider's Resume</h1>
+            <div class="character"></div>
             <p>Cybersecurity | Data Science | IT Admin</p>
-            <p>Florida State University | B.S. IT | Expected 2025</p>
-            <p>📌 Skills: C++, Python, Unix, MySQL, Data Analytics</p>
-            <p>📂 Projects: Credit Score Classification, Budget App, Sushi Alive Redesign</p>
-            <p>🏢 Experience: Home Depot - Customer Service | Florida Highway Patrol - SysAdmin Intern</p>
             <button onclick="navigate('skills')">📜 Skills</button>
             <button onclick="navigate('projects')">🕹️ Projects</button>
             <button onclick="navigate('contact')">📞 Contact</button>
         </div>
         <div class="buttons">
-            <div class="d-pad">
-                <div class="up"></div>
-                <div class="down"></div>
-                <div class="left"></div>
-                <div class="right"></div>
-            </div>
-            <div class="action-buttons">
-                <button class="a-button">A</button>
-                <button class="b-button">B</button>
-            </div>
+            <button class="up" onclick="moveCharacter(0, -10)">▲</button>
+            <button class="left" onclick="moveCharacter(-10, 0)">◀</button>
+            <button class="right" onclick="moveCharacter(10, 0)">▶</button>
+            <button class="down" onclick="moveCharacter(0, 10)">▼</button>
         </div>
     </div>
+    <audio id="move-sound" src="move.mp3"></audio>
+    <audio id="select-sound" src="select.mp3"></audio>
     <script>
         function navigate(section) {
-            window.location.href = section + ".html";
+            document.getElementById('select-sound').play();
+            setTimeout(() => {
+                window.location.href = section + ".html";
+            }, 500);
+        }
+        function moveCharacter(x, y) {
+            const character = document.querySelector('.character');
+            const rect = character.getBoundingClientRect();
+            document.getElementById('move-sound').play();
+            character.style.transform = `translate(${rect.left + x}px, ${rect.top + y}px)`;
         }
     </script>
 </body>
