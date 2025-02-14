@@ -32,30 +32,37 @@
             justify-content: center;
             text-align: center;
             background-size: cover;
+            background-position: center;
         }
         #home {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            background: url('https://source.unsplash.com/1600x900/?technology,network') no-repeat center center/cover;
         }
         #skills {
-            background: linear-gradient(135deg, #007bff, #0056b3);
+            background: url('https://source.unsplash.com/1600x900/?coding,developer') no-repeat center center/cover;
         }
         #projects {
-            background: linear-gradient(135deg, #ff6f00, #ff9800);
+            background: url('https://source.unsplash.com/1600x900/?data,analytics') no-repeat center center/cover;
         }
         #contact {
-            background: linear-gradient(135deg, #4caf50, #388e3c);
+            background: url('https://source.unsplash.com/1600x900/?communication,tech') no-repeat center center/cover;
         }
         h1 {
             font-size: 3em;
             font-weight: 700;
             text-transform: uppercase;
             animation: fadeIn 1.5s ease-in-out;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 10px;
         }
         p {
             font-size: 1.2em;
             margin-bottom: 15px;
             font-weight: 400;
             animation: fadeIn 1.8s ease-in-out;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 10px;
         }
         .btn {
             background: white;
@@ -109,36 +116,31 @@
         <section class="section" id="home">
             <img src="profile.jpg" alt="Schneider Etienne" class="profile-img">
             <h1>Schneider Etienne</h1>
-            <p>Information Technology Student | Web Developer | Data Analyst</p>
-            <p>Passionate about problem-solving, technology, and innovation.</p>
+            <p>IT Professional | Web Developer | Data Analyst</p>
+            <p>Innovative problem-solver specializing in system security, data analysis, and modern tech solutions.</p>
             <button class="btn" onclick="scrollToSection(1)">Explore My Skills</button>
         </section>
         <section class="section" id="skills">
             <h1>Skills</h1>
-            <p>Programming: C++, Python, HTML, CSS</p>
-            <p>Databases & Tools: MySQL, Microsoft Office, Orange Data Mining</p>
-            <p>Development & Design: Wireframing, Prototyping, UNIX</p>
+            <p><b>Programming:</b> C++, Python, HTML, CSS ⭐⭐⭐⭐⭐</p>
+            <p><b>Databases & Tools:</b> MySQL, Microsoft Office, Orange Data Mining ⭐⭐⭐⭐☆</p>
+            <p><b>Development & Design:</b> Wireframing, Prototyping, UNIX ⭐⭐⭐⭐☆</p>
             <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
         </section>
         <section class="section" id="projects">
             <h1>Projects</h1>
-            <p>Credit Score Classification Model - Built a machine learning model using Python.</p>
-            <p>Personal Budget App - Developed an encrypted budget-tracking app.</p>
-            <p>Sushi Alive Website Redesign - Designed a wireframe prototype with advanced search features.</p>
+            <p><b>Credit Score Classification Model</b> - Built a Python-based ML model improving classification accuracy.</p>
+            <p><b>Personal Budget Management App</b> - Developed a secure finance-tracking mobile app.</p>
+            <p><b>Sushi Alive Website Redesign</b> - Designed an interactive, health-conscious restaurant website.</p>
+            <p><a href="https://github.com/yourgithub" target="_blank">View More on GitHub</a></p>
             <button class="btn" onclick="scrollToSection(3)">Get In Touch</button>
         </section>
         <section class="section" id="contact">
             <h1>Contact</h1>
-            <p>Email: schneideretienne12@gmail.com</p>
+            <p>Email: <a href="mailto:schneideretienne12@gmail.com">schneideretienne12@gmail.com</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/schneider-etienne2025" target="_blank">Schneider Etienne</a></p>
             <button class="btn" onclick="scrollToSection(0)">Back to Home</button>
         </section>
-    </div>
-    <div class="nav-buttons">
-        <div class="nav-btn active" onclick="scrollToSection(0)"></div>
-        <div class="nav-btn" onclick="scrollToSection(1)"></div>
-        <div class="nav-btn" onclick="scrollToSection(2)"></div>
-        <div class="nav-btn" onclick="scrollToSection(3)"></div>
     </div>
     <script>
         function scrollToSection(index) {
