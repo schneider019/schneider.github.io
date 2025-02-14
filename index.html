@@ -20,7 +20,7 @@
         .wrapper {
             display: flex;
             flex-direction: row;
-            width: 400vw;
+            width: 500vw;
             height: 100vh;
             transition: transform 0.5s ease-in-out;
         }
@@ -38,7 +38,7 @@
         #home {
             background: url('https://i.imgur.com/U5Ow6eX.gif') no-repeat center center/cover;
         }
-        #skills, #projects, #contact {
+        #skills, #projects, #education, #contact {
             background: black;
         }
         h1 {
@@ -72,25 +72,6 @@
             margin-bottom: 15px;
             border: 4px solid #00ff00;
         }
-        .nav-buttons {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 20px;
-        }
-        .nav-btn {
-            width: 15px;
-            height: 15px;
-            background: #00ff00;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .nav-btn:hover, .nav-btn.active {
-            background: white;
-        }
     </style>
 </head>
 <body>
@@ -115,7 +96,14 @@
             <p><b>Personal Budget Management App</b> - Developed a secure finance-tracking mobile app.</p>
             <p><b>Sushi Alive Website Redesign</b> - Designed an interactive, health-conscious restaurant website.</p>
             <p><a href="https://github.com/yourgithub" target="_blank">View More on GitHub</a></p>
-            <button class="btn" onclick="scrollToSection(3)">Get In Touch</button>
+            <button class="btn" onclick="scrollToSection(3)">View Education</button>
+        </section>
+        <section class="section" id="education">
+            <h1>Education</h1>
+            <p><b>Florida State University</b> - Bachelor’s in Information Technology</p>
+            <p>Expected Graduation: May 2025</p>
+            <p>Relevant Coursework: Cybersecurity, Data Analysis, Software Development</p>
+            <button class="btn" onclick="scrollToSection(4)">Get In Touch</button>
         </section>
         <section class="section" id="contact">
             <h1>Contact</h1>
@@ -128,10 +116,8 @@
         function scrollToSection(index) {
             const wrapper = document.getElementById("wrapper");
             wrapper.style.transform = `translateX(-${index * 100}vw)`;
-            document.querySelectorAll('.nav-btn').forEach((btn, i) => {
-                btn.classList.toggle('active', i === index);
-            });
         }
     </script>
 </body>
 </html>
+
