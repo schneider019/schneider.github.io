@@ -20,7 +20,7 @@
         .wrapper {
             display: flex;
             flex-direction: row;
-            width: 400vw;
+            width: 500vw;
             height: 100vh;
             transition: transform 0.5s ease-in-out;
         }
@@ -38,7 +38,7 @@
         #home {
             background: url('https://i.imgur.com/U5Ow6eX.gif') no-repeat center center/cover;
         }
-        #skills, #projects, #contact {
+        #skills, #projects, #experience, #contact {
             background: black;
         }
         h1 {
@@ -98,24 +98,35 @@
         <section class="section" id="home">
             <img src="profile.jpg" alt="Schneider Etienne" class="profile-img">
             <h1>Schneider Etienne</h1>
-            <p>IT Professional | Web Developer | Data Analyst</p>
-            <p>Welcome to my digital world of security and innovation.</p>
-            <button class="btn" onclick="scrollToSection(1)">Enter</button>
+            <p>IT Professional | System Administrator | Data Analyst</p>
+            <p>Passionate about building secure and scalable systems that drive innovation.</p>
+            <button class="btn" onclick="scrollToSection(1)">Explore My Skills</button>
         </section>
         <section class="section" id="skills">
-            <h1>Skills</h1>
+            <h1>Technical Skills</h1>
             <p><b>Programming:</b> C++, Python, HTML, CSS ⭐⭐⭐⭐⭐</p>
-            <p><b>Databases & Tools:</b> MySQL, Microsoft Office, Orange Data Mining ⭐⭐⭐⭐☆</p>
+            <p><b>Networking & Security:</b> System Administration, Firewalls, Cloud Security ⭐⭐⭐⭐☆</p>
+            <p><b>Data Analysis:</b> MySQL, Orange Data Mining, Excel, Power BI ⭐⭐⭐⭐☆</p>
             <p><b>Development & Design:</b> Wireframing, Prototyping, UNIX ⭐⭐⭐⭐☆</p>
             <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
         </section>
         <section class="section" id="projects">
             <h1>Projects</h1>
-            <p><b>Credit Score Classification Model</b> - Built a Python-based ML model improving classification accuracy.</p>
-            <p><b>Personal Budget Management App</b> - Developed a secure finance-tracking mobile app.</p>
-            <p><b>Sushi Alive Website Redesign</b> - Designed an interactive, health-conscious restaurant website.</p>
+            <p><b>Credit Score Classification Model</b> - Developed a Python-based ML model to predict credit scores based on financial behavior.</p>
+            <p><b>Personal Budget Management App</b> - Designed and implemented an encrypted mobile app for expense tracking.</p>
+            <p><b>Sushi Alive Website Redesign</b> - Led the design and development of an interactive website for a health-conscious restaurant.</p>
             <p><a href="https://github.com/yourgithub" target="_blank">View More on GitHub</a></p>
-            <button class="btn" onclick="scrollToSection(3)">Get In Touch</button>
+            <button class="btn" onclick="scrollToSection(3)">View Experience</button>
+        </section>
+        <section class="section" id="experience">
+            <h1>Work Experience</h1>
+            <p><b>System Administrator Intern - Florida Highway Patrol</b></p>
+            <p>- Assisted in managing IT infrastructure and security audits.</p>
+            <p>- Configured and troubleshooted enterprise network systems.</p>
+            <p><b>Home Depot - Customer Service Associate</b></p>
+            <p>- Provided technical support for store operational systems.</p>
+            <p>- Trained new employees on digital inventory systems.</p>
+            <button class="btn" onclick="scrollToSection(4)">Get In Touch</button>
         </section>
         <section class="section" id="contact">
             <h1>Contact</h1>
@@ -135,4 +146,3 @@
     </script>
 </body>
 </html>
-
