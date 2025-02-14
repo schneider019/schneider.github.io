@@ -1,48 +1,103 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schneider | Creative Resume</title>
+    <title>Schneider's Game Boy Resume</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: white;
-            text-align: center;
-            margin: 0;
-            padding: 0;
+            background-color: #a0a0a0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        header {
-            padding: 50px;
-            font-size: 2em;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
+        .gameboy {
+            width: 300px;
+            height: 500px;
+            background-color: #d0d0d0;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
         }
-        a {
-            color: #ff5733;
-            text-decoration: none;
+        .screen {
+            width: 260px;
+            height: 180px;
+            background-color: #7cb342;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .d-pad {
+            display: grid;
+            grid-template-columns: 30px 30px 30px;
+            grid-template-rows: 30px 30px 30px;
+            gap: 5px;
+        }
+        .d-pad div {
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            border-radius: 5px;
+        }
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .a-button, .b-button {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            border-radius: 50%;
+            border: none;
+            margin: 5px;
+            font-weight: bold;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Schneider</h1>
-        <p>Cybersecurity | Data Science | IT Administration</p>
-    </header>
-
-    <div class="container">
-        <h2>About Me</h2>
-        <p>I specialize in cybersecurity, IT administration, and data-driven problem-solving.</p>
-
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/schneider019" target="_blank">github.com/schneider019</a></p>
+    <div class="gameboy">
+        <div class="screen">
+            <h1>Welcome to Schneider's Resume</h1>
+            <p>Cybersecurity | Data Science | IT Admin</p>
+            <button onclick="navigate('skills')">📜 Skills</button>
+            <button onclick="navigate('projects')">🕹️ Projects</button>
+            <button onclick="navigate('contact')">📞 Contact</button>
+        </div>
+        <div class="buttons">
+            <div class="d-pad">
+                <div class="up"></div>
+                <div class="down"></div>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+            <div class="action-buttons">
+                <button class="a-button">A</button>
+                <button class="b-button">B</button>
+            </div>
+        </div>
     </div>
+    <script>
+        function navigate(section) {
+            alert('Navigating to ' + section);
+        }
+    </script>
 </body>
 </html>
