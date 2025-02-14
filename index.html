@@ -7,33 +7,21 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
         body {
-            background-color: black;
-            color: #00ff00;
-            font-family: 'Share Tech Mono', monospace;
+            background-color: #121212;
+            color: white;
+            font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
             margin: 0;
             padding: 0;
-            text-align: center;
-            position: relative;
-        }
-        .matrix-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: url('https://i.imgur.com/2Kd0v4K.gif') repeat;
-            opacity: 0.2;
         }
         .wrapper {
             display: flex;
             flex-direction: row;
             width: 400vw;
             height: 100vh;
-            transition: transform 0.8s ease-in-out;
+            transition: transform 0.5s ease-in-out;
         }
         .section {
             width: 100vw;
@@ -44,76 +32,121 @@
             justify-content: center;
             text-align: center;
             background-size: cover;
-            background-position: center;
+        }
+        #home {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+        }
+        #skills {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+        }
+        #projects {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+        }
+        #contact {
+            background: linear-gradient(135deg, #4caf50, #388e3c);
         }
         h1 {
-            font-size: 2em;
+            font-size: 3em;
+            font-weight: 700;
             text-transform: uppercase;
-            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: 400;
+            animation: fadeIn 1.8s ease-in-out;
         }
         .btn {
-            background: black;
-            color: #00ff00;
+            background: white;
+            color: black;
             padding: 12px 24px;
             border-radius: 8px;
             font-size: 1.1em;
             cursor: pointer;
             transition: 0.3s ease-in-out;
-            border: 2px solid #00ff00;
-            box-shadow: 0 0 5px #00ff00;
+            border: none;
+            font-weight: 600;
         }
         .btn:hover {
-            background: #00ff00;
-            color: black;
-            transform: scale(1.1);
-            box-shadow: 0 0 10px #00ff00;
+            background: lightgray;
+            transform: scale(1.05);
         }
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             margin-bottom: 15px;
-            border: 3px solid #00ff00;
+            border: 4px solid white;
+        }
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+        .nav-btn {
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .nav-btn:hover, .nav-btn.active {
+            background: #ff6f00;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <div class="matrix-background"></div>
     <div class="wrapper" id="wrapper">
         <section class="section" id="home">
             <img src="profile.jpg" alt="Schneider Etienne" class="profile-img">
             <h1>Schneider Etienne</h1>
-            <p>IT Professional | System Administrator | Data Analyst</p>
-            <p>Passionate about building secure and scalable systems that drive innovation.</p>
+            <p>Information Technology Student | Web Developer | Data Analyst</p>
+            <p>Passionate about problem-solving, technology, and innovation.</p>
             <button class="btn" onclick="scrollToSection(1)">Explore My Skills</button>
         </section>
         <section class="section" id="skills">
-            <h1>Technical Skills</h1>
-            <p><b>Programming:</b> C++, Python, HTML, CSS ⭐⭐⭐⭐⭐</p>
-            <p><b>Networking & Security:</b> System Administration, Firewalls, Cloud Security ⭐⭐⭐⭐☆</p>
-            <p><b>Data Analysis:</b> MySQL, Orange Data Mining, Excel, Power BI ⭐⭐⭐⭐☆</p>
-            <p><b>Development & Design:</b> Wireframing, Prototyping, UNIX ⭐⭐⭐⭐☆</p>
+            <h1>Skills</h1>
+            <p>Programming: C++, Python, HTML, CSS</p>
+            <p>Databases & Tools: MySQL, Microsoft Office, Orange Data Mining</p>
+            <p>Development & Design: Wireframing, Prototyping, UNIX</p>
             <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
         </section>
         <section class="section" id="projects">
             <h1>Projects</h1>
-            <p><b>Credit Score Classification Model</b> - Developed a Python-based ML model to predict credit scores based on financial behavior.</p>
-            <p><b>Personal Budget Management App</b> - Designed and implemented an encrypted mobile app for expense tracking.</p>
-            <p><b>Sushi Alive Website Redesign</b> - Led the design and development of an interactive website for a health-conscious restaurant.</p>
-            <p><a href="https://github.com/yourgithub" target="_blank">View More on GitHub</a></p>
-            <button class="btn" onclick="scrollToSection(3)">View Experience</button>
+            <p>Credit Score Classification Model - Built a machine learning model using Python.</p>
+            <p>Personal Budget App - Developed an encrypted budget-tracking app.</p>
+            <p>Sushi Alive Website Redesign - Designed a wireframe prototype with advanced search features.</p>
+            <button class="btn" onclick="scrollToSection(3)">Get In Touch</button>
         </section>
         <section class="section" id="contact">
             <h1>Contact</h1>
-            <p>Email: <a href="mailto:schneideretienne12@gmail.com">schneideretienne12@gmail.com</a></p>
+            <p>Email: schneideretienne12@gmail.com</p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/schneider-etienne2025" target="_blank">Schneider Etienne</a></p>
             <button class="btn" onclick="scrollToSection(0)">Back to Home</button>
         </section>
+    </div>
+    <div class="nav-buttons">
+        <div class="nav-btn active" onclick="scrollToSection(0)"></div>
+        <div class="nav-btn" onclick="scrollToSection(1)"></div>
+        <div class="nav-btn" onclick="scrollToSection(2)"></div>
+        <div class="nav-btn" onclick="scrollToSection(3)"></div>
     </div>
     <script>
         function scrollToSection(index) {
             const wrapper = document.getElementById("wrapper");
             wrapper.style.transform = `translateX(-${index * 100}vw)`;
+            document.querySelectorAll('.nav-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', i === index);
+            });
         }
     </script>
 </body>
