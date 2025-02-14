@@ -31,9 +31,9 @@
         .wrapper {
             display: flex;
             flex-direction: row;
-            width: 400vw;
+            width: 500vw;
             height: 100vh;
-            transition: transform 0.8s ease-in-out;
+            transition: transform 0.5s ease-in-out;
         }
         .section {
             width: 100vw;
@@ -50,6 +50,12 @@
             font-size: 2em;
             text-transform: uppercase;
             text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+            animation: glitch 1.5s infinite alternate;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 0 0 5px #00ff00; }
+            50% { text-shadow: -2px -2px 5px #00ff00, 2px 2px 5px #00ff00; }
+            100% { text-shadow: 2px -2px 5px #00ff00, -2px 2px 5px #00ff00; }
         }
         .btn {
             background: black;
@@ -68,12 +74,21 @@
             transform: scale(1.1);
             box-shadow: 0 0 10px #00ff00;
         }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 3px solid #00ff00;
+        .typewriter p {
+            overflow: hidden;
+            border-right: .15em solid #00ff00;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .10em;
+            animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00ff00; }
         }
     </style>
 </head>
@@ -83,23 +98,27 @@
         <section class="section" id="home">
             <img src="profile.jpg" alt="Schneider Etienne" class="profile-img">
             <h1>Schneider Etienne</h1>
-            <p>Information Technology Student | Web Developer | Data Analyst</p>
-            <p>Passionate about problem-solving, technology, and innovation.</p>
+            <div class="typewriter">
+                <p>IT Professional | System Administrator | Data Analyst</p>
+            </div>
+            <p>Passionate about building secure and scalable systems that drive innovation.</p>
             <button class="btn" onclick="scrollToSection(1)">Explore My Skills</button>
         </section>
         <section class="section" id="skills">
-            <h1>Skills</h1>
-            <p>Programming: C++, Python, HTML, CSS</p>
-            <p>Databases & Tools: MySQL, Microsoft Office, Orange Data Mining</p>
-            <p>Development & Design: Wireframing, Prototyping, UNIX</p>
+            <h1>Technical Skills</h1>
+            <p><b>Programming:</b> C++, Python, HTML, CSS ⭐⭐⭐⭐⭐</p>
+            <p><b>Networking & Security:</b> System Administration, Firewalls, Cloud Security ⭐⭐⭐⭐☆</p>
+            <p><b>Data Analysis:</b> MySQL, Orange Data Mining, Excel, Power BI ⭐⭐⭐⭐☆</p>
+            <p><b>Development & Design:</b> Wireframing, Prototyping, UNIX ⭐⭐⭐⭐☆</p>
             <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
         </section>
         <section class="section" id="projects">
             <h1>Projects</h1>
-            <p>Credit Score Classification Model - Built a machine learning model using Python.</p>
-            <p>Personal Budget App - Developed an encrypted budget-tracking app.</p>
-            <p>Sushi Alive Website Redesign - Designed a wireframe prototype with advanced search features.</p>
-            <button class="btn" onclick="scrollToSection(3)">Get In Touch</button>
+            <p><b>Credit Score Classification Model</b> - Developed a Python-based ML model to predict credit scores based on financial behavior.</p>
+            <p><b>Personal Budget Management App</b> - Designed and implemented an encrypted mobile app for expense tracking.</p>
+            <p><b>Sushi Alive Website Redesign</b> - Led the design and development of an interactive website for a health-conscious restaurant.</p>
+            <p><a href="https://github.com/yourgithub" target="_blank">View More on GitHub</a></p>
+            <button class="btn" onclick="scrollToSection(3)">View Experience</button>
         </section>
         <section class="section" id="contact">
             <h1>Contact</h1>
@@ -112,8 +131,10 @@
         function scrollToSection(index) {
             const wrapper = document.getElementById("wrapper");
             wrapper.style.transform = `translateX(-${index * 100}vw)`;
+            document.querySelectorAll('.nav-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', i === index);
+            });
         }
     </script>
 </body>
 </html>
-
