@@ -11,7 +11,7 @@
 
         body {
             background-color: black;
-            color: #00aaff;
+            color: #00ff00;
             font-family: 'Share Tech Mono', monospace;
             overflow-x: hidden;
             margin: 0;
@@ -51,35 +51,35 @@
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             text-transform: uppercase;
-            text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff;
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
             animation: glitch 1.5s infinite alternate;
         }
 
         @keyframes glitch {
-            0% { text-shadow: 0 0 5px #00aaff; }
-            50% { text-shadow: -2px -2px 5px #00aaff, 2px 2px 5px #00aaff; }
-            100% { text-shadow: 2px -2px 5px #00aaff, -2px 2px 5px #00aaff; }
+            0% { text-shadow: 0 0 5px #00ff00; }
+            50% { text-shadow: -2px -2px 5px #00ff00, 2px 2px 5px #00ff00; }
+            100% { text-shadow: 2px -2px 5px #00ff00, -2px 2px 5px #00ff00; }
         }
 
         .btn {
             background: black;
-            color: #00aaff;
+            color: #00ff00;
             padding: 12px 24px;
             border-radius: 8px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             cursor: pointer;
             transition: 0.3s ease-in-out;
-            border: 2px solid #00aaff;
-            box-shadow: 0 0 5px #00aaff;
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 5px #00ff00;
         }
 
         .btn:hover {
-            background: #00aaff;
+            background: #00ff00;
             color: black;
             transform: scale(1.1);
-            box-shadow: 0 0 10px #00aaff;
+            box-shadow: 0 0 10px #00ff00;
         }
 
         .profile-img {
@@ -87,14 +87,13 @@
             height: 180px;
             border-radius: 50%;
             margin-bottom: 15px;
-            border: 4px solid #00aaff;
+            border: 4px solid #00ff00;
         }
-
     </style>
 </head>
 <body>
 
-    <!-- Matrix Falling Code Background -->
+    <!-- Matrix Effect Background -->
     <canvas id="matrixCanvas"></canvas>
 
     <div class="wrapper" id="wrapper">
@@ -104,6 +103,34 @@
             <p>IT Professional | Web Developer | Data Analyst</p>
             <p>Welcome to my digital world of security and innovation.</p>
             <button class="btn" onclick="scrollToSection(1)">Enter</button>
+        </section>
+        <section class="section" id="skills">
+            <h1>Skills</h1>
+            <p>Programming: C++, Python, HTML, CSS</p>
+            <p>Databases & Tools: MySQL, Microsoft Office, Orange Data Mining</p>
+            <p>Development & Design: Wireframing, Prototyping, UNIX</p>
+            <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
+        </section>
+        <section class="section" id="projects">
+            <h1>Projects</h1>
+            <p><b>Credit Score Classification Model</b> - Built a Python-based ML model improving classification accuracy.</p>
+            <p><b>Personal Budget Management App</b> - Developed a secure finance-tracking mobile app.</p>
+            <p><b>Sushi Alive Website Redesign</b> - Designed an interactive, health-conscious restaurant website.</p>
+            <p><a href="https://github.com/yourgithub" target="_blank">View More on GitHub</a></p>
+            <button class="btn" onclick="scrollToSection(3)">View Education</button>
+        </section>
+        <section class="section" id="education">
+            <h1>Education</h1>
+            <p><b>Florida State University</b> - Bachelor’s in Information Technology</p>
+            <p>Expected Graduation: May 2025</p>
+            <p>Relevant Coursework: Application Security, Cloud Networking, Data Visualization</p>
+            <button class="btn" onclick="scrollToSection(4)">Get In Touch</button>
+        </section>
+        <section class="section" id="contact">
+            <h1>Contact</h1>
+            <p>Email: <a href="mailto:schneideretienne12@gmail.com">schneideretienne12@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/schneider-etienne2025" target="_blank">Schneider Etienne</a></p>
+            <button class="btn" onclick="scrollToSection(0)">Back to Home</button>
         </section>
     </div>
 
