@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schneider Etienne | Cybersecurity & IT Professional</title>
+    <title>Schneider Etienne | Information Technology Professional</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <style>
@@ -18,10 +18,12 @@
         }
         .wrapper {
             display: flex;
-            flex-direction: row;
-            width: 500vw;
+            flex-direction: column;
+            width: 100vw;
             height: 100vh;
-            transition: transform 0.5s ease-in-out;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
         .section {
             width: 100vw;
@@ -39,35 +41,28 @@
         }
         #home {
             background: linear-gradient(135deg, #1a1a2e, #16213e);
-            animation-delay: 0.2s;
         }
         #skills {
             background: linear-gradient(135deg, #007bff, #0056b3);
-            animation-delay: 0.4s;
         }
         #projects {
             background: linear-gradient(135deg, #ff6f00, #ff9800);
-            animation-delay: 0.6s;
         }
         #experience {
             background: linear-gradient(135deg, #673ab7, #512da8);
-            animation-delay: 0.8s;
         }
         #contact {
             background: linear-gradient(135deg, #4caf50, #388e3c);
-            animation-delay: 1s;
         }
         h1 {
             font-size: 3em;
             font-weight: 700;
             text-transform: uppercase;
-            animation: fadeIn 1.5s ease-in-out;
         }
         p {
             font-size: 1.2em;
             margin-bottom: 15px;
             font-weight: 400;
-            animation: fadeIn 1.8s ease-in-out;
         }
         .btn {
             background: white;
@@ -79,7 +74,6 @@
             transition: 0.3s ease-in-out;
             border: none;
             font-weight: 600;
-            animation: fadeIn 2s ease-in-out;
         }
         .btn:hover {
             background: lightgray;
@@ -91,62 +85,59 @@
             border-radius: 50%;
             margin-bottom: 15px;
             border: 4px solid white;
-            animation: fadeIn 1.5s ease-in-out;
         }
-        .skills-list {
-            text-align: left;
-        }
-        .star-rating {
-            color: gold;
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
     <div class="wrapper" id="wrapper">
-        <section class="section parallax" id="home">
+        <section class="section" id="home">
             <img src="profile.jpg" alt="Schneider Etienne" class="profile-img">
             <h1>Schneider Etienne</h1>
-            <p>Cybersecurity | IT Administration | Data Science</p>
-            <p>Innovative problem-solver skilled in securing and optimizing digital systems.</p>
-            <p>Keywords: Security, Analysis, Problem-Solving, Leadership, Strategy</p>
-            <button class="btn" onclick="scrollToSection(1)">Explore My Skills</button>
+            <p>Information Technology Student | Web Developer | Data Analyst</p>
+            <p>Passionate about problem-solving, technology, and innovation.</p>
+            <button class="btn" onclick="scrollToSection('skills')">Explore My Skills</button>
         </section>
         <section class="section" id="skills">
             <h1>Skills</h1>
-            <div class="skills-list">
-                <p>Cybersecurity <span class="star-rating">★★★★★</span></p>
-                <p>IT Administration <span class="star-rating">★★★★☆</span></p>
-                <p>Data Science & Analysis <span class="star-rating">★★★★☆</span></p>
-                <p>Cloud Security <span class="star-rating">★★★☆☆</span></p>
-                <p>Network Security <span class="star-rating">★★★★★</span></p>
-                <p>Threat Analysis <span class="star-rating">★★★★☆</span></p>
-            </div>
-            <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
+            <p>Programming Languages: C++, Python, HTML, CSS</p>
+            <p>Database & Tools: MySQL, Microsoft Office, Orange Data Mining</p>
+            <p>Development & Design: Wireframing, Prototyping, UNIX</p>
+            <button class="btn" onclick="scrollToSection('projects')">View My Projects</button>
         </section>
         <section class="section" id="projects">
             <h1>Projects</h1>
-            <p>Developed AI-driven cybersecurity models to detect fraudulent activities.</p>
-            <p>Engineered cloud security policies for enterprise networks.</p>
-            <p>Created a risk assessment framework for IT infrastructure security.</p>
-            <button class="btn" onclick="scrollToSection(3)">View Experience</button>
+            <p><b>Credit Score Classification Model</b></p>
+            <p>Built a machine learning model using Python to classify credit scores, applied data cleaning techniques, and developed visualizations.</p>
+            <p><b>Personal Budget Management App</b></p>
+            <p>Designed and developed a mobile app for budget tracking using Python and SQLite with secure data encryption.</p>
+            <p><b>Sushi Alive Website Redesign</b></p>
+            <p>Created a health-conscious wireframe prototype with advanced search and nutrition features using HTML & CSS.</p>
+            <button class="btn" onclick="scrollToSection('experience')">View Experience</button>
         </section>
         <section class="section" id="experience">
             <h1>Work Experience</h1>
             <p><b>System Administrator Intern - Florida Highway Patrol</b></p>
-            <p>Managed IT infrastructure, security audits, and system optimization.</p>
-            <p><b>Data Scientist - Finance Industry</b></p>
-            <p>Developed AI-driven credit score classification models based on financial risk factors.</p>
-            <p><b>Home Depot - IT Support</b></p>
-            <p>Provided customer and technical support for operational IT systems.</p>
-            <button class="btn" onclick="scrollToSection(4)">Get In Touch</button>
+            <p>Shadowed senior system administrators, assisted with user account management, workstation setups, and IT infrastructure maintenance.</p>
+            <p><b>Home Depot - Customer Service Associate</b></p>
+            <p>Trained new hires, operated as a cashier, assisted customers, and troubleshooted minor IT issues in-store.</p>
+            <button class="btn" onclick="scrollToSection('contact')">Get In Touch</button>
         </section>
         <section class="section" id="contact">
             <h1>Contact</h1>
             <p>Let's connect and discuss opportunities!</p>
-            <p>Email: your.email@example.com</p>
-            <p>LinkedIn: linkedin.com/in/yourprofile</p>
-            <button class="btn" onclick="scrollToSection(0)">Back to Home</button>
+            <p>Email: schneideretienne12@gmail.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/schneider-etienne2025" target="_blank">Schneider Etienne</a></p>
+            <button class="btn" onclick="scrollToSection('home')">Back to Home</button>
         </section>
     </div>
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
