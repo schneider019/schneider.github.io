@@ -11,7 +11,7 @@
 
         body {
             background-color: black;
-            color: #00aaff; /* Neon Blue Text */
+            color: #00aaff;
             font-family: 'Share Tech Mono', monospace;
             overflow-x: hidden;
             margin: 0;
@@ -51,7 +51,7 @@
         }
 
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             text-transform: uppercase;
             text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff;
             animation: glitch 1.5s infinite alternate;
@@ -68,7 +68,7 @@
             color: #00aaff;
             padding: 12px 24px;
             border-radius: 8px;
-            font-size: 1.1em;
+            font-size: 1.2em;
             cursor: pointer;
             transition: 0.3s ease-in-out;
             border: 2px solid #00aaff;
@@ -90,18 +90,38 @@
             border: 4px solid #00aaff;
         }
 
+        /* Progress Bar Styling */
         .progress-bar {
-            width: 80%;
-            background-color: #333;
+            width: 60%;
+            background-color: rgba(255, 255, 255, 0.2);
             border-radius: 5px;
-            margin: 10px 0;
+            margin: 15px auto;
+            position: relative;
+            height: 20px;
+            box-shadow: 0 0 10px #00aaff;
+            overflow: hidden;
         }
 
         .progress {
-            height: 10px;
+            height: 100%;
             border-radius: 5px;
-            background: #00aaff;
+            background: linear-gradient(90deg, #00aaff, #0088ff);
+            box-shadow: 0 0 5px #00aaff;
+            transition: width 1s ease-in-out;
         }
+
+        .progress-label {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+        }
+
     </style>
 </head>
 <body>
@@ -113,35 +133,54 @@
         <section class="section" id="home">
             <img src="profile.jpg" alt="Schneider Etienne" class="profile-img">
             <h1>Schneider Etienne</h1>
-            <p><b>IT Professional | Web Developer | Data Analyst</b></p>
-            <p><i>Welcome to my digital world of security and innovation.</i></p>
+            <p>IT Professional | Web Developer | Data Analyst</p>
+            <p>Welcome to my digital world of security and innovation.</p>
             <button class="btn" onclick="scrollToSection(1)">Enter</button>
         </section>
+
         <section class="section" id="skills">
             <h1>Skills</h1>
+
             <p><b>Programming:</b> C++, Python, HTML, CSS</p>
-            <div class="progress-bar"><div class="progress" style="width: 90%"> Expert (90%)</div></div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 90%;">
+                    <span class="progress-label">Expert (90%)</span>
+                </div>
+            </div>
+
             <p><b>Databases & Tools:</b> MySQL, Microsoft Office, Orange Data Mining</p>
-            <div class="progress-bar"><div class="progress" style="width: 80%"> Proficient (80%)</div></div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 80%;">
+                    <span class="progress-label">Proficient (80%)</span>
+                </div>
+            </div>
+
             <p><b>Development & Design:</b> Wireframing, Prototyping, UNIX</p>
-            <div class="progress-bar"><div class="progress" style="width: 85%"> Advanced (85%)</div></div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 85%;">
+                    <span class="progress-label">Advanced (85%)</span>
+                </div>
+            </div>
+
             <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
         </section>
+
         <section class="section" id="projects">
             <h1>Projects</h1>
-            <p><b>Credit Score Classification Model</b> - Developed a Python-based ML model to predict credit scores based on financial behavior. <i>Increased model accuracy by 15%.</i></p>
-            <p><b>Personal Budget Management App</b> - Designed and implemented an encrypted mobile app for expense tracking. <i>Enhanced budget tracking for users, reducing errors by 30%.</i></p>
-            <p><b>Sushi Alive Website Redesign</b> - Led the design and development of an interactive website for a health-conscious restaurant.</p>
+            <p><b>Credit Score Classification Model</b> - Improved accuracy by 15%.</p>
+            <p><b>Personal Budget Management App</b> - Helped users reduce tracking errors by 30%.</p>
+            <p><b>Sushi Alive Website Redesign</b> - Designed an interactive, health-conscious restaurant website.</p>
             <button class="btn" onclick="scrollToSection(3)">View Education</button>
         </section>
+
         <section class="section" id="education">
             <h1>Education</h1>
-            <p><b>Florida State University</b> - Bachelor's in Information Technology</p>
-            <p><b>Expected Graduation:</b> May 2025</p>
-            <p><i>Academic Strengths:</i> Strong foundation in security, networking, and software development.</p>
+            <p><b>Florida State University</b> - Bachelor’s in Information Technology</p>
+            <p><i>Expected Graduation: May 2025</i></p>
             <p><b>Relevant Coursework:</b> Application Security, Cloud Networking, Data Visualization</p>
             <button class="btn" onclick="scrollToSection(4)">Get In Touch</button>
         </section>
+
         <section class="section" id="contact">
             <h1>Contact</h1>
             <p>Email: <a href="mailto:schneideretienne12@gmail.com">schneideretienne12@gmail.com</a></p>
@@ -155,36 +194,6 @@
             const wrapper = document.getElementById("wrapper");
             wrapper.style.transform = `translateX(-${index * 100}vw)`;
         }
-
-        // Matrix Falling Code Effect
-        const canvas = document.getElementById("matrixCanvas");
-        const ctx = canvas.getContext("2d");
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
-        const columns = canvas.width / 15;
-        const drops = Array(Math.floor(columns)).fill(1);
-
-        function drawMatrix() {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#00ff00";
-            ctx.font = "15px monospace";
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = characters[Math.floor(Math.random() * characters.length)];
-                ctx.fillText(text, i * 15, drops[i] * 15);
-                
-                if (drops[i] * 15 > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-
-        setInterval(drawMatrix, 50);
     </script>
 
 </body>
