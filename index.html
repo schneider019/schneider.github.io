@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etienne Schneider | Cybersecurity & IT Professional</title>
+    <title>Schneider Etienne | Cybersecurity & IT Professional</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <style>
@@ -19,7 +19,7 @@
         .wrapper {
             display: flex;
             flex-direction: row;
-            width: 400vw;
+            width: 500vw;
             height: 100vh;
             transition: transform 0.5s ease-in-out;
         }
@@ -33,21 +33,29 @@
             text-align: center;
             background-size: cover;
             padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s forwards;
         }
         #home {
             background: linear-gradient(135deg, #1a1a2e, #16213e);
+            animation-delay: 0.2s;
         }
         #skills {
             background: linear-gradient(135deg, #007bff, #0056b3);
+            animation-delay: 0.4s;
         }
         #projects {
             background: linear-gradient(135deg, #ff6f00, #ff9800);
+            animation-delay: 0.6s;
         }
         #experience {
             background: linear-gradient(135deg, #673ab7, #512da8);
+            animation-delay: 0.8s;
         }
         #contact {
             background: linear-gradient(135deg, #4caf50, #388e3c);
+            animation-delay: 1s;
         }
         h1 {
             font-size: 3em;
@@ -71,17 +79,19 @@
             transition: 0.3s ease-in-out;
             border: none;
             font-weight: 600;
+            animation: fadeIn 2s ease-in-out;
         }
         .btn:hover {
             background: lightgray;
             transform: scale(1.05);
         }
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             margin-bottom: 15px;
-            border: 3px solid white;
+            border: 4px solid white;
+            animation: fadeIn 1.5s ease-in-out;
         }
         .nav-buttons {
             position: fixed;
@@ -103,6 +113,10 @@
             background: #ff6f00;
         }
         @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
@@ -111,26 +125,30 @@
 <body>
     <div class="wrapper" id="wrapper">
         <section class="section" id="home">
-            <img src="profile.jpg" alt="Etienne Schneider" class="profile-img">
-            <h1>Etienne Schneider</h1>
+            <img src="profile.jpg" alt="Schneider Etienne" class="profile-img">
+            <h1>Schneider Etienne</h1>
             <p>Cybersecurity | IT Administration | Data Science</p>
-            <p>Dedicated to securing and optimizing digital systems with innovative solutions.</p>
+            <p>Innovative problem-solver skilled in securing and optimizing digital systems.</p>
+            <p>Keywords: Security, Analysis, Problem-Solving, Leadership, Strategy</p>
             <button class="btn" onclick="scrollToSection(1)">Explore My Skills</button>
         </section>
         <section class="section" id="skills">
             <h1>Skills</h1>
-            <p>Expert in Cybersecurity, IT Infrastructure, Cloud Security, and Data Analytics.</p>
+            <p>Proficient in Cybersecurity, IT Infrastructure, Cloud Security, and Data Analytics.</p>
+            <p>Expertise in network security, penetration testing, and database management.</p>
             <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
         </section>
         <section class="section" id="projects">
             <h1>Projects</h1>
             <p>Developed cybersecurity case studies, cloud security reports, and AI-based security models.</p>
+            <p>Engineered secure database systems and optimized IT workflows.</p>
             <button class="btn" onclick="scrollToSection(3)">View Experience</button>
         </section>
         <section class="section" id="experience">
             <h1>Work Experience</h1>
-            <p>System Administrator Intern at Florida Highway Patrol.</p>
+            <p>System Administrator Intern at Florida Highway Patrol - Managed IT infrastructure security.</p>
             <p>Data Scientist - Developed AI-driven credit score classification models.</p>
+            <p>Home Depot - Gained customer service & operational IT support experience.</p>
             <button class="btn" onclick="scrollToSection(4)">Get In Touch</button>
         </section>
         <section class="section" id="contact">
@@ -139,21 +157,5 @@
             <button class="btn" onclick="scrollToSection(0)">Back to Home</button>
         </section>
     </div>
-    <div class="nav-buttons">
-        <div class="nav-btn active" onclick="scrollToSection(0)"></div>
-        <div class="nav-btn" onclick="scrollToSection(1)"></div>
-        <div class="nav-btn" onclick="scrollToSection(2)"></div>
-        <div class="nav-btn" onclick="scrollToSection(3)"></div>
-        <div class="nav-btn" onclick="scrollToSection(4)"></div>
-    </div>
-    <script>
-        function scrollToSection(index) {
-            const wrapper = document.getElementById("wrapper");
-            wrapper.style.transform = `translateX(-${index * 100}vw)`;
-            document.querySelectorAll('.nav-btn').forEach((btn, i) => {
-                btn.classList.toggle('active', i === index);
-            });
-        }
-    </script>
 </body>
 </html>
