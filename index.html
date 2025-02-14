@@ -9,50 +9,57 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
         body {
-            background: linear-gradient(to bottom, #1a1a2e, #0a0a0a);
+            background-color: #121212;
             color: white;
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            width: 400vw;
+            height: 100vh;
+            transition: transform 0.5s ease-in-out;
+        }
+        .section {
+            width: 100vw;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
             text-align: center;
-            overflow: hidden;
+            background-size: cover;
         }
-        .container {
-            max-width: 800px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 255, 0.6);
-            animation: fadeIn 1.5s ease-in-out;
+        #home {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+        }
+        #skills {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+        }
+        #projects {
+            background: linear-gradient(135deg, #ff6f00, #ff9800);
+        }
+        #contact {
+            background: linear-gradient(135deg, #4caf50, #388e3c);
         }
         h1 {
             font-size: 3em;
-            margin-bottom: 10px;
-            text-transform: uppercase;
             font-weight: 700;
-            text-shadow: 0px 0px 10px rgba(0, 0, 255, 0.8);
+            text-transform: uppercase;
+            animation: fadeIn 1.5s ease-in-out;
         }
         p {
             font-size: 1.2em;
             margin-bottom: 15px;
             font-weight: 400;
-        }
-        .highlight {
-            color: #007bff;
-            font-weight: 700;
-        }
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
+            animation: fadeIn 1.8s ease-in-out;
         }
         .btn {
-            background: #007bff;
-            color: white;
+            background: white;
+            color: black;
             padding: 12px 24px;
             border-radius: 8px;
             font-size: 1.1em;
@@ -60,33 +67,73 @@
             transition: 0.3s ease-in-out;
             border: none;
             font-weight: 600;
-            box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.5);
         }
         .btn:hover {
-            background: #0056b3;
-            transform: scale(1.1);
+            background: lightgray;
+            transform: scale(1.05);
+        }
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+        .nav-btn {
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .nav-btn:hover, .nav-btn.active {
+            background: #ff6f00;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Schneider</h1>
-        <p>Aspiring <span class="highlight">Cybersecurity Professional</span> | IT Administrator | Data Analyst</p>
-        <p>Dedicated to securing and optimizing digital systems with innovative solutions.</p>
-        <p>Expertise in <span class="highlight">network security, data protection, cloud infrastructure</span>, and threat analysis.</p>
-        <div class="btn-container">
-            <button class="btn" onclick="navigate('skills')">Explore My Skills</button>
-            <button class="btn" onclick="navigate('projects')">View My Projects</button>
-            <button class="btn" onclick="navigate('contact')">Get In Touch</button>
-        </div>
+    <div class="wrapper" id="wrapper">
+        <section class="section" id="home">
+            <h1>Schneider</h1>
+            <p>Aspiring Cybersecurity Professional | IT Administrator | Data Analyst</p>
+            <p>Bringing security and efficiency to digital solutions.</p>
+            <button class="btn" onclick="scrollToSection(1)">Explore My Skills</button>
+        </section>
+        <section class="section" id="skills">
+            <h1>Skills</h1>
+            <p>Expert in Cybersecurity, IT Infrastructure, and Data Analytics</p>
+            <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
+        </section>
+        <section class="section" id="projects">
+            <h1>Projects</h1>
+            <p>Cybersecurity Case Studies, Cloud Security Reports, and AI-based Security Models</p>
+            <button class="btn" onclick="scrollToSection(3)">Get In Touch</button>
+        </section>
+        <section class="section" id="contact">
+            <h1>Contact</h1>
+            <p>Let's connect and discuss opportunities!</p>
+            <button class="btn" onclick="scrollToSection(0)">Back to Home</button>
+        </section>
+    </div>
+    <div class="nav-buttons">
+        <div class="nav-btn active" onclick="scrollToSection(0)"></div>
+        <div class="nav-btn" onclick="scrollToSection(1)"></div>
+        <div class="nav-btn" onclick="scrollToSection(2)"></div>
+        <div class="nav-btn" onclick="scrollToSection(3)"></div>
     </div>
     <script>
-        function navigate(section) {
-            window.location.href = section + ".html";
+        function scrollToSection(index) {
+            const wrapper = document.getElementById("wrapper");
+            wrapper.style.transform = `translateX(-${index * 100}vw)`;
+            document.querySelectorAll('.nav-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', i === index);
+            });
         }
     </script>
 </body>
