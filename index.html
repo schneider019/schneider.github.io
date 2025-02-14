@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
         body {
-            background-color: #A4C639;
-            color: black;
-            font-family: 'Press Start 2P', cursive;
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Share Tech Mono', monospace;
             overflow-x: hidden;
             margin: 0;
             padding: 0;
@@ -34,37 +34,34 @@
             text-align: center;
             background-size: cover;
             background-position: center;
-            border: 8px solid black;
         }
         #home {
-            background: url('https://i.imgur.com/3Z7bAXJ.png') no-repeat center center/cover;
+            background: url('https://i.imgur.com/U5Ow6eX.gif') no-repeat center center/cover;
         }
-        #skills {
-            background: url('https://i.imgur.com/BvXZ4hT.png') no-repeat center center/cover;
+        #skills, #projects, #contact {
+            background: black;
         }
-        #projects {
-            background: url('https://i.imgur.com/TJ7h3hj.png') no-repeat center center/cover;
+        h1 {
+            font-size: 2em;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
         }
-        #contact {
-            background: url('https://i.imgur.com/ZH37P5N.png') no-repeat center center/cover;
-        }
-        h1, p {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 5px;
+        p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
         }
         .btn {
             background: black;
-            color: white;
+            color: #00ff00;
             padding: 12px 24px;
             border-radius: 8px;
             font-size: 1.1em;
             cursor: pointer;
             transition: 0.3s ease-in-out;
-            border: 3px solid white;
+            border: 2px solid #00ff00;
         }
         .btn:hover {
-            background: yellow;
+            background: #00ff00;
             color: black;
             transform: scale(1.1);
         }
@@ -73,7 +70,7 @@
             height: 180px;
             border-radius: 50%;
             margin-bottom: 15px;
-            border: 4px solid black;
+            border: 4px solid #00ff00;
         }
         .nav-buttons {
             position: fixed;
@@ -86,13 +83,13 @@
         .nav-btn {
             width: 15px;
             height: 15px;
-            background: black;
+            background: #00ff00;
             border-radius: 50%;
             cursor: pointer;
             transition: 0.3s;
         }
         .nav-btn:hover, .nav-btn.active {
-            background: yellow;
+            background: white;
         }
     </style>
 </head>
@@ -102,8 +99,8 @@
             <img src="profile.jpg" alt="Schneider Etienne" class="profile-img">
             <h1>Schneider Etienne</h1>
             <p>IT Professional | Web Developer | Data Analyst</p>
-            <p>Bringing retro tech vibes into modern technology.</p>
-            <button class="btn" onclick="scrollToSection(1)">Start</button>
+            <p>Welcome to my digital world of security and innovation.</p>
+            <button class="btn" onclick="scrollToSection(1)">Enter</button>
         </section>
         <section class="section" id="skills">
             <h1>Skills</h1>
@@ -138,4 +135,3 @@
     </script>
 </body>
 </html>
-
