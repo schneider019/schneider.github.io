@@ -11,7 +11,7 @@
 
         body {
             background-color: black;
-            color: #00ff00;
+            color: #00bfff; /* Blue Neon */
             font-family: 'Share Tech Mono', monospace;
             overflow-x: hidden;
             margin: 0;
@@ -53,33 +53,33 @@
         h1 {
             font-size: 2em;
             text-transform: uppercase;
-            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+            text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff;
             animation: glitch 1.5s infinite alternate;
         }
 
         @keyframes glitch {
-            0% { text-shadow: 0 0 5px #00ff00; }
-            50% { text-shadow: -2px -2px 5px #00ff00, 2px 2px 5px #00ff00; }
-            100% { text-shadow: 2px -2px 5px #00ff00, -2px 2px 5px #00ff00; }
+            0% { text-shadow: 0 0 5px #00bfff; }
+            50% { text-shadow: -2px -2px 5px #00bfff, 2px 2px 5px #00bfff; }
+            100% { text-shadow: 2px -2px 5px #00bfff, -2px 2px 5px #00bfff; }
         }
 
         .btn {
             background: black;
-            color: #00ff00;
+            color: #00bfff;
             padding: 12px 24px;
             border-radius: 8px;
             font-size: 1.1em;
             cursor: pointer;
             transition: 0.3s ease-in-out;
-            border: 2px solid #00ff00;
-            box-shadow: 0 0 5px #00ff00;
+            border: 2px solid #00bfff;
+            box-shadow: 0 0 5px #00bfff;
         }
 
         .btn:hover {
-            background: #00ff00;
+            background: #00bfff;
             color: black;
             transform: scale(1.1);
-            box-shadow: 0 0 10px #00ff00;
+            box-shadow: 0 0 10px #00bfff;
         }
 
         .profile-img {
@@ -87,7 +87,35 @@
             height: 180px;
             border-radius: 50%;
             margin-bottom: 15px;
-            border: 4px solid #00ff00;
+            border: 4px solid #00bfff;
+        }
+
+        /* Skill Progress Bars */
+        .progress-container {
+            width: 60%;
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: #222;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #00bfff;
+            overflow: hidden;
+            height: 15px;
+        }
+
+        .progress {
+            height: 15px;
+            background: #00bfff;
+            box-shadow: 0 0 5px #00bfff;
+            text-align: right;
+            padding-right: 10px;
+            line-height: 15px;
+            font-size: 12px;
+            color: black;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -104,28 +132,48 @@
             <p>Welcome to my digital world of security and innovation.</p>
             <button class="btn" onclick="scrollToSection(1)">Enter</button>
         </section>
+
         <section class="section" id="skills">
             <h1>Skills</h1>
-            <p>Programming: C++, Python, HTML, CSS</p>
-            <p>Databases & Tools: MySQL, Microsoft Office, Orange Data Mining</p>
-            <p>Development & Design: Wireframing, Prototyping, UNIX</p>
+            <div class="progress-container">
+                <p><b>Programming:</b> C++, Python, HTML, CSS</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 98%;">Expert (98%)</div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <p><b>Databases & Tools:</b> MySQL, Microsoft Office, Orange Data Mining</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;">Proficient (80%)</div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <p><b>Development & Design:</b> Wireframing, Prototyping, UNIX</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;">Advanced (85%)</div>
+                </div>
+            </div>
             <button class="btn" onclick="scrollToSection(2)">View My Projects</button>
         </section>
+
         <section class="section" id="projects">
             <h1>Projects</h1>
             <p><b>Credit Score Classification Model</b> - Built a Python-based ML model improving classification accuracy.</p>
             <p><b>Personal Budget Management App</b> - Developed a secure finance-tracking mobile app.</p>
             <p><b>Sushi Alive Website Redesign</b> - Designed an interactive, health-conscious restaurant website.</p>
-            <p><a href="https://github.com/yourgithub" target="_blank">View More on GitHub</a></p>
             <button class="btn" onclick="scrollToSection(3)">View Education</button>
         </section>
+
         <section class="section" id="education">
             <h1>Education</h1>
             <p><b>Florida State University</b> - Bachelor’s in Information Technology</p>
-            <p>Expected Graduation: May 2025</p>
+            <p><b>Expected Graduation:</b> August 2025</p>
             <p>Relevant Coursework: Application Security, Cloud Networking, Data Visualization</p>
             <button class="btn" onclick="scrollToSection(4)">Get In Touch</button>
         </section>
+
         <section class="section" id="contact">
             <h1>Contact</h1>
             <p>Email: <a href="mailto:schneideretienne12@gmail.com">schneideretienne12@gmail.com</a></p>
@@ -154,16 +202,13 @@
         function drawMatrix() {
             ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#00ff00";
+            ctx.fillStyle = "#00bfff";
             ctx.font = "15px monospace";
 
             for (let i = 0; i < drops.length; i++) {
                 const text = characters[Math.floor(Math.random() * characters.length)];
                 ctx.fillText(text, i * 15, drops[i] * 15);
-                
-                if (drops[i] * 15 > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
+                if (drops[i] * 15 > canvas.height && Math.random() > 0.975) drops[i] = 0;
                 drops[i]++;
             }
         }
