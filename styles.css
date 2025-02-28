@@ -66,10 +66,12 @@ h1 {
     transform: scale(1.1);
     box-shadow: 0 0 10px #00bfff;
 }
+
 /* Fix profile image size */
 .profile-img {
-    width: 150px;  /* Adjust as needed */
-    height: 150px; /* Keep it square */
+    max-width: 100%;
+    width: 120px; /* Adjusted size */
+    height: 120px;
     border-radius: 50%; /* Keeps it circular */
     object-fit: cover; /* Ensures it doesn't stretch */
     border: 4px solid #00bfff;
