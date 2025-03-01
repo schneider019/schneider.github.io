@@ -30,15 +30,9 @@ canvas {
 }
 
 .section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  /* Centers content vertically */
-    align-items: center;  /* Centers content horizontally */
-    min-height: 100vh;  /* Ensures each section takes full height */
-    width: 100%;
     padding: 40px;
     border-radius: 10px;
-    margin: auto;
+    margin: 20px auto;
     max-width: 80%;
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 4px 8px rgba(0, 191, 255, 0.3);
@@ -57,7 +51,6 @@ h1 {
     text-transform: uppercase;
     text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff;
     letter-spacing: 1.5px;
-    text-align: center;
 }
 
 .btn {
@@ -97,13 +90,13 @@ h1 {
 }
 
 .job, .project {
-    background: rgba(0, 0, 0, 0.95);  /* Stronger background for better readability */
+    background: rgba(0, 0, 0, 0.9);
     border-left: 5px solid #00bfff;
-    padding: 20px;
-    margin: 20px auto;
-    width: 60%; /* Adjust width to keep it neat */
-    text-align: left; /* Left-align text for readability */
-    box-shadow: 0 0 12px #00bfff;
+    padding: 15px;
+    margin: 15px 0;
+    width: 80%;
+    text-align: left;
+    box-shadow: 0 0 8px #00bfff;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -113,12 +106,6 @@ h1 {
 }
 
 p {
-    line-height: 1.8; /* Increased for better readability */
-    font-size: 1.2em; /* Larger text */
-}
-
-ul {
-    padding-left: 20px; /* Ensure bullet points align properly */
-    text-align: left; /* Aligns lists to the left for better readability */
-    max-width: 80%; /* Ensures it doesn’t spread too wide */
+    line-height: 1.6;
+    font-size: 1.1em;
 }
