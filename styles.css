@@ -30,9 +30,14 @@ canvas {
 }
 
 .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centers content vertically */
+    align-items: center;  /* Centers content horizontally */
+    min-height: 100vh;  /* Ensures each section takes full height */
     padding: 40px;
     border-radius: 10px;
-    margin: 20px auto;
+    margin: auto;
     max-width: 80%;
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 4px 8px rgba(0, 191, 255, 0.3);
@@ -94,8 +99,8 @@ h1 {
     border-left: 5px solid #00bfff;
     padding: 15px;
     margin: 15px 0;
-    width: 80%;
-    text-align: left;
+    width: 60%; /* Adjust width to make it look centered */
+    text-align: center; /* Centers text inside */
     box-shadow: 0 0 8px #00bfff;
     transition: transform 0.3s ease-in-out;
 }
