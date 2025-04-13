@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schneider Etienne | IT Professional</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Linking CSS -->
-    <script src="script.js" defer></script>  <!-- Linking JavaScript -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Matrix Effect Background -->
     <canvas id="matrixCanvas"></canvas>
 
     <div class="wrapper" id="wrapper">
@@ -25,26 +24,11 @@
         <section class="section" id="skills">
             <h1>Skills</h1>
             <div class="skills-container">
-                <div class="skill">
-                    <p>C++ (Advanced)</p>
-                    <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-                </div>
-                <div class="skill">
-                    <p>Python (Expert)</p>
-                    <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
-                </div>
-                <div class="skill">
-                    <p>HTML & CSS (Advanced)</p>
-                    <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-                </div>
-                <div class="skill">
-                    <p>MySQL (Intermediate)</p>
-                    <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-                </div>
-                <div class="skill">
-                    <p>Orange Data Mining (Intermediate)</p>
-                    <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
-                </div>
+                <div class="skill"><p>C++ (Advanced)</p><div class="progress-bar"><div class="progress" style="width: 90%;"></div></div></div>
+                <div class="skill"><p>Python (Expert)</p><div class="progress-bar"><div class="progress" style="width: 95%;"></div></div></div>
+                <div class="skill"><p>HTML & CSS (Advanced)</p><div class="progress-bar"><div class="progress" style="width: 85%;"></div></div></div>
+                <div class="skill"><p>MySQL (Intermediate)</p><div class="progress-bar"><div class="progress" style="width: 75%;"></div></div></div>
+                <div class="skill"><p>Orange Data Mining (Intermediate)</p><div class="progress-bar"><div class="progress" style="width: 60%;"></div></div></div>
             </div>
             <button class="btn" onclick="scrollToSection(2)">View Work Experience</button>
         </section>
@@ -83,40 +67,57 @@
                     <li>Participated in community outreach programs to mentor students interested in STEM.</li>
                 </ul>
             </div>
-            <button class="btn" onclick="scrollToSection(3)">View My Projects</button>
+            <button class="btn" onclick="scrollToSection(3)">View My Portfolio</button>
         </section>
 
-        <section class="section" id="projects">
-            <h1>Projects</h1>
-            <div class="project">
-                <h2>Credit Score Classification Model</h2>
-                <p>Developed a predictive model to classify credit scores, improving financial risk assessment for lenders.</p>
-                <ul>
-                    <li>Built a machine learning model using Python and scikit-learn.</li>
-                    <li>Implemented data cleaning and feature engineering, improving prediction accuracy by 20%.</li>
-                    <li>Developed data visualizations to interpret trends and correlations in credit-related features.</li>
-                </ul>
-            </div>
+        <section class="section" id="portfolio">
+            <h1>Portfolio</h1>
 
             <div class="project">
-                <h2>Personal Budget Management App</h2>
-                <p>Created a mobile application for tracking expenses and managing personal budgets efficiently.</p>
+                <h2>Credit Score Classification Model</h2>
+                <p>Built a machine learning model using Python and scikit-learn.</p>
                 <ul>
-                    <li>Designed and developed using Python and SQLite.</li>
-                    <li>Implemented budget tracking features, helping users reduce overspending by an average of 25%.</li>
-                    <li>Added data encryption for security and conducted testing for cross-device compatibility.</li>
+                    <li>Focused on predicting credit scores to help lenders assess risk.</li>
+                    <li>Used feature engineering and visualizations to improve accuracy.</li>
                 </ul>
             </div>
 
             <div class="project">
                 <h2>Sushi Alive Website Redesign</h2>
-                <p>Redesigned the website for Sushi Alive, improving user engagement and accessibility.</p>
+                <p>Redesigned the Sushi Alive website for health-conscious users.</p>
                 <ul>
-                    <li>Designed a responsive wireframe prototype tailored for health-conscious customers.</li>
-                    <li>Integrated features like a nutritional section, search bar, and detailed food information using HTML and CSS.</li>
-                    <li>Improved page loading speed by 35% through optimized images and cleaner code.</li>
+                    <li>Added a nutritional section, search bar, and food info pop-ups.</li>
+                    <li>Improved accessibility, speed, and engagement with cleaner HTML/CSS.</li>
                 </ul>
             </div>
+
+            <div class="project">
+                <h2>3D Printed Remote Holder</h2>
+                <p>Designed and printed a wall-mounted holder to solve the problem of losing small remotes.</p>
+                <ul>
+                    <li>Used correct sizing and tested functionality.</li>
+                    <li>Attached using command strips and shared slicing settings.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h2>VR World in a Box (Unity Project)</h2>
+                <p>Built a small interactive virtual environment using Unity.</p>
+                <ul>
+                    <li>Added walls, floors, wallpapers, and assets like a dog knight and trees.</li>
+                    <li>Learned Unity's interface and asset integration tools.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h2>Digital ID Wireframe Prototype for FSU</h2>
+                <p>Created a wireframe for a student ID solution.</p>
+                <ul>
+                    <li>Included login, balance, NFC access, and library features.</li>
+                    <li>Used Figma and focused on clean, intuitive UX.</li>
+                </ul>
+            </div>
+
             <button class="btn" onclick="scrollToSection(4)">View Education</button>
         </section>
 
