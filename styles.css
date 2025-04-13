@@ -118,12 +118,11 @@ p {
     font-size: 1.1em;
 }
 
-/* 🔵 New class for Portfolio title */
+/* 🔵 Portfolio Section Title */
 .section-title {
     font-size: 2em;
     text-transform: uppercase;
     text-align: center;
     color: #00bfff;
     margin-bottom: 30px;
-    text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff;
-}
+    text-shadow: 0 0 5px #00bfff, 0 0 10px #00
