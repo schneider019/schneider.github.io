@@ -252,3 +252,24 @@ p {
     box-shadow: 0 0 10px #00bfff;
 }
 
+/* 🧠 Subtitle Styling and Animation */
+.subtitle {
+    font-size: 1.2em;
+    margin: 10px 0 20px;
+    letter-spacing: 1px;
+    color: #00bfff;
+    text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff;
+    animation: fadeInUp 1.5s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
