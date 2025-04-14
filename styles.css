@@ -61,6 +61,7 @@ h1 {
     letter-spacing: 1.5px;
 }
 
+/* ✨ Animated Subheading */
 .bio {
     animation: fadeInSub 2s ease-in-out;
     max-width: 800px;
@@ -78,7 +79,26 @@ h1 {
     }
 }
 
-/* Removed .btn and .btn:hover */
+.btn {
+    background: linear-gradient(45deg, #00bfff, #008cff);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 0 10px #00bfff;
+    margin-top: 20px;
+    will-change: transform;
+}
+
+.btn:hover {
+    background: #00bfff;
+    color: black;
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #00bfff;
+}
 
 .profile-img {
     max-width: 100%;
@@ -118,6 +138,7 @@ p {
     font-size: 1.1em;
 }
 
+/* 🔵 Portfolio Section Title */
 .section-title {
     font-size: 2em;
     text-transform: uppercase;
@@ -127,6 +148,7 @@ p {
     text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff;
 }
 
+/* 🔷 Portfolio Layout Styles */
 .portfolio-item {
     display: flex;
     align-items: center;
@@ -167,6 +189,7 @@ p {
     text-align: left;
 }
 
+/* 🟨 Job Title Icon Style */
 .job h2 img.job-title-icon {
     height: 28px;
     width: auto;
@@ -175,6 +198,7 @@ p {
     border-radius: 5px;
 }
 
+/* 📊 Skills Section Enhancements */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -211,6 +235,7 @@ p {
     100% { box-shadow: 0 0 5px #00bfff; }
 }
 
+/* 📱 Responsive Layouts */
 @media (max-width: 768px) {
     .portfolio-item {
         flex-direction: column;
@@ -233,6 +258,7 @@ p {
     }
 }
 
+/* 🔷 Navigation Bar */
 .navbar {
     position: fixed;
     top: 0;
@@ -273,6 +299,7 @@ p {
     box-shadow: 0 0 10px #00bfff;
 }
 
+/* 🎓 FSU Logo in Education Section */
 .education-logo {
     width: 100px;
     height: auto;
@@ -281,6 +308,7 @@ p {
     box-shadow: 0 0 10px #00bfff;
 }
 
+/* 📄 Resume Embed Styling */
 .resume-container {
     width: 90%;
     max-width: 900px;
@@ -297,4 +325,3 @@ p {
     border: none;
     border-radius: 10px;
 }
-
