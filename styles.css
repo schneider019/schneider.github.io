@@ -36,7 +36,7 @@ canvas {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* changed from center */
+    justify-content: flex-start;
     align-items: center;
     padding: 40px;
     border-radius: 10px;
@@ -46,7 +46,7 @@ canvas {
     opacity: 0;
     transform: translateY(30px);
     scroll-snap-align: center;
-    overflow-y: auto; /* allow scrolling if content is tall */
+    overflow-y: auto;
 }
 
 .section.show {
