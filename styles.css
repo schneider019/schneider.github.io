@@ -69,26 +69,6 @@ img {
     box-shadow: 0 0 15px #00bfff;
 }
 
-.btn {
-    background: linear-gradient(45deg, #00bfff, #008cff);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    border: none;
-    box-shadow: 0 0 10px #00bfff;
-    margin-top: 20px;
-}
-
-.btn:hover {
-    background: #00bfff;
-    color: black;
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #00bfff;
-}
-
 .profile-img {
     max-width: 100%;
     width: 120px;
