@@ -38,7 +38,7 @@ canvas {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 100px 40px 40px; /* top padding for navbar */
+    padding: 100px 40px 40px;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 4px 8px rgba(0, 191, 255, 0.3);
@@ -59,6 +59,14 @@ h1 {
     text-transform: uppercase;
     text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff;
     letter-spacing: 1.5px;
+}
+
+img {
+    max-width: 300px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00bfff;
 }
 
 .btn {
@@ -119,7 +127,6 @@ p {
     font-size: 1.1em;
 }
 
-/* 🔵 Portfolio Section Title */
 .section-title {
     font-size: 2em;
     text-transform: uppercase;
@@ -129,7 +136,6 @@ p {
     text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff;
 }
 
-/* 🔷 Portfolio Layout Styles */
 .portfolio-item {
     display: flex;
     align-items: center;
@@ -170,7 +176,6 @@ p {
     text-align: left;
 }
 
-/* 🟨 Job Title Icon Style */
 .job h2 img.job-title-icon {
     height: 28px;
     width: auto;
@@ -179,7 +184,6 @@ p {
     border-radius: 5px;
 }
 
-/* 📱 Responsive Layouts */
 @media (max-width: 768px) {
     .portfolio-item {
         flex-direction: column;
@@ -202,7 +206,6 @@ p {
     }
 }
 
-/* 🔷 Navigation Bar */
 .navbar {
     position: fixed;
     top: 0;
