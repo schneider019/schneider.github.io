@@ -170,6 +170,16 @@ p {
     text-align: left;
 }
 
+/* 🟨 Job Title Icon Style */
+.job h2 img.job-title-icon {
+    height: 28px;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+/* 📱 Responsive Layouts */
 @media (max-width: 768px) {
     .portfolio-item {
         flex-direction: column;
@@ -183,5 +193,11 @@ p {
     .project-image {
         width: 100%;
         max-width: 350px;
+    }
+
+    .job h2 img.job-title-icon {
+        display: block;
+        margin: 10px auto;
+        height: 24px;
     }
 }
