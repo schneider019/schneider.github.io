@@ -38,7 +38,7 @@ canvas {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 100px 40px 40px; /* top padding for navbar */
+    padding: 100px 40px 40px;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 4px 8px rgba(0, 191, 255, 0.3);
@@ -59,6 +59,24 @@ h1 {
     text-transform: uppercase;
     text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff;
     letter-spacing: 1.5px;
+}
+
+/* ✨ Animated Subheading */
+.bio {
+    animation: fadeInSub 2s ease-in-out;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@keyframes fadeInSub {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .btn {
@@ -179,6 +197,43 @@ p {
     border-radius: 5px;
 }
 
+/* 📊 Skills Section Enhancements */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 800px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.skill p {
+    margin: 5px 0;
+    font-weight: bold;
+    color: #00bfff;
+}
+
+.progress-bar {
+    background: rgba(0, 191, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+    margin-top: 4px;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #00bfff, #008cff);
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 5px #00bfff; }
+    50% { box-shadow: 0 0 15px #00bfff; }
+    100% { box-shadow: 0 0 5px #00bfff; }
+}
+
 /* 📱 Responsive Layouts */
 @media (max-width: 768px) {
     .portfolio-item {
@@ -250,26 +305,4 @@ p {
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px #00bfff;
-}
-
-/* 🧠 Subtitle Styling and Animation */
-.subtitle {
-    font-size: 1.2em;
-    margin: 10px 0 20px;
-    letter-spacing: 1px;
-    color: #00bfff;
-    text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff;
-    animation: fadeInUp 1.5s ease-in-out forwards;
-    opacity: 0;
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
