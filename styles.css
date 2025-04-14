@@ -38,7 +38,7 @@ canvas {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 40px;
+    padding: 100px 40px 40px; /* top padding for navbar */
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 4px 8px rgba(0, 191, 255, 0.3);
@@ -200,4 +200,45 @@ p {
         margin: 10px auto;
         height: 24px;
     }
+}
+
+/* 🔷 Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px #00bfff;
+    border-bottom: 1px solid #00bfff;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: #00bfff;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 6px 12px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    background-color: #00bfff;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00bfff;
 }
