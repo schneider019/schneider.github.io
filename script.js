@@ -1,10 +1,4 @@
 window.onload = function () {
-    const wrapper = document.getElementById("wrapper");
-
-    function scrollToSection(index) {
-        wrapper.style.transform = `translateX(-${index * 100}vw)`;
-    }
-
     // Matrix Falling Code Effect
     const canvas = document.getElementById("matrixCanvas");
     const ctx = canvas.getContext("2d");
@@ -19,7 +13,7 @@ window.onload = function () {
     function drawMatrix() {
         ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "#00ff00"; // Green Falling Code
+        ctx.fillStyle = "#00ff00";
         ctx.font = "15px monospace";
 
         for (let i = 0; i < drops.length; i++) {
@@ -34,7 +28,7 @@ window.onload = function () {
 
     setInterval(drawMatrix, 50);
 
-    // Smooth section transitions on scroll
+    // Animate sections when they appear in view
     const sections = document.querySelectorAll(".section");
 
     const observer = new IntersectionObserver(entries => {
@@ -49,6 +43,14 @@ window.onload = function () {
         observer.observe(section);
     });
 
-    // Make scrollToSection available globally
-    window.scrollToSection = scrollToSection;
+    // Enter button scrolls to next section (e.g., #skills)
+    const enterButton = document.getElementById("enter");
+    if (enterButton) {
+        enterButton.addEventListener("click", function () {
+            const targetSection = document.getElementById("skills");
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    }
 };
