@@ -10,7 +10,7 @@ body {
     text-align: center;
     position: relative;
     scroll-behavior: smooth;
-    /* Removed scroll-snap-type to avoid conflict with translateX */
+    /* Removed to prevent conflict with translateX */
     /* scroll-snap-type: x mandatory; */
 }
 
