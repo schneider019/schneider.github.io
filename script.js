@@ -1,4 +1,13 @@
 window.onload = function () {
+    const wrapper = document.getElementById("wrapper");
+
+    function scrollToSection(index) {
+        wrapper.style.transform = `translateX(-${index * 100}vw)`;
+    }
+
+    // ✅ Make the scroll function available globally so buttons work
+    window.scrollToSection = scrollToSection;
+
     // Matrix Falling Code Effect
     const canvas = document.getElementById("matrixCanvas");
     const ctx = canvas.getContext("2d");
@@ -28,7 +37,7 @@ window.onload = function () {
 
     setInterval(drawMatrix, 50);
 
-    // Animate sections when they appear in view
+    // Animate sections on scroll
     const sections = document.querySelectorAll(".section");
 
     const observer = new IntersectionObserver(entries => {
@@ -42,15 +51,4 @@ window.onload = function () {
     sections.forEach(section => {
         observer.observe(section);
     });
-
-    // Enter button scrolls to next section (e.g., #skills)
-    const enterButton = document.getElementById("enter");
-    if (enterButton) {
-        enterButton.addEventListener("click", function () {
-            const targetSection = document.getElementById("skills");
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: "smooth" });
-            }
-        });
-    }
 };
